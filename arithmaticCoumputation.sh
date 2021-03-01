@@ -22,7 +22,7 @@ for((i=0;i<4;i++))
 do
 	for((j=i+1;j<4;j++))
 	do
-		if [ ${a[i]} -lt ${a[j]} ]
+		if [ ${a[i]} -gt ${a[j]} ]
 		then
 			temp=${a[i]}
 			a[$i]=${a[j]}
