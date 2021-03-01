@@ -13,8 +13,27 @@ ar[comp2]=$result2
 ar[comp3]=$result3
 ar[comp4]=$result4
 
-array=(${ar[comp1]} ${ar[comp2]} ${ar[comp3]} ${ar[comp4]})
+a=(${ar[comp1]} ${ar[comp2]} ${ar[comp3]} ${ar[comp4]})
 n=4
-echo  ${array[@]}
+echo  ${a[@]}
 
+#sorting loop
+for((i=0;i<4;i++))
+do
+	for((j=i+1;j<4;j++))
+	do
+		if [ ${a[i]} -lt ${a[j]} ]
+		then
+			temp=${a[i]}
+			a[$i]=${a[j]}
+			a[j]=$temp
+		fi
+	done
+done
 
+echo "After sorting in descending order"
+
+for((i=0;i<4;i++))
+do
+	echo ${a[$i]}
+done
