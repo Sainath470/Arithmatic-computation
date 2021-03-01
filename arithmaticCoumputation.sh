@@ -13,4 +13,8 @@ ar[comp2]=$result2
 ar[comp3]=$result3
 ar[comp4]=$result4
 
-echo ${ar[@]}
+array=(${ar[comp1]} ${ar[comp2]} ${ar[comp3]} ${ar[comp4]})
+n=4
+echo  ${array[@]}
+
+
